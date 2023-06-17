@@ -1,0 +1,67 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+.metadata
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+
+**/application-local*.yml
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+log/
+application-local.yml
+
+### local ###
+# log/
+
+### mavne ###
+target/
+src/main/resources/wsdl/NewCIF.wsdl
+src/main/java/com/cathy/cubcapi/controller/TestController.java
+src/main/java/com/cathy/cubcapi/fido/req/Test.java
+src/main/java/com/cathy/cubcapi/gson/TestAJsonAdapter.java
+src/main/java/com/cathy/cubcapi/paas/res/PaasResList.java
+src/main/java/com/cathy/cubcapi/paas/res/TestA.java
+src/test/java/com/cathy/cubcapi/JsonTest.java
+src/test/java/com/cathy/cubcapi/Test.java
+src/test/java/com/cathy/cubcapi/aop/aspect/LogAspectTest.java
+src/test/java/com/cathy/cubcapi/controller/app/QueryVersionControllerTest.java
+src/test/java/com/cathy/cubcapi/khp/Test.java
+src/test/java/com/cathy/cubcapi/khp/core/KHCompImplTest.java
+src/test/java/com/cathy/cubcapi/service/account/QueryAccountDetailServiceTest.java
+src/test/java/com/cathy/cubcapi/service/auth/LoginServiceTest.java
+src/test/java/com/cathy/cubcapi/util/EncryptDecryptUtilTest.java
+src/main/java/com/cathay/cubcapi/model/api/auth/req/Test1234.java
+src/test/java/com/cathay/cubcapi/Test23.java
+src/test/java/com/cathay/cubcapi/TestA.java
