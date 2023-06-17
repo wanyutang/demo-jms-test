@@ -13,6 +13,8 @@ logging:
     root: DEBUG
     org.springframework: DEBUG
 
+# https://10.20.30.196:9443/ibmmq/console/
+
 ibm:
   mq:
     queueManager: QM1
