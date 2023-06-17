@@ -3,10 +3,26 @@ spring:
     group:
       default:
         - local
+  activemq:
+    broker-url: tcp://10.20.30.196:1414
+    user: admin
+    password: passw0rd
+    pool.enabled: true
 logging:
   level:
     root: DEBUG
     org.springframework: DEBUG
+
+ibm:
+  mq:
+    queueManager: QM1
+    channel: DEV.ADMIN.SVRCONN
+    connName: 10.20.30.196(1414)
+    user: admin
+    password: passw0rd
+    pool:
+      enabled: true
+
 info:
   demo:
     val1: demoVal1
