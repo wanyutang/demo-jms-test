@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
@@ -43,19 +44,16 @@ public class MqMessageIdTest {
     public void receiveMessageAndVerifyMsgId() throws JMSException {
         BytesMessage receivedMessage = (BytesMessage) jmsTemplate.receive(QUEUE_NAME);
 
-        if (receivedMessage != null) {
-            byte[] messageIdBytes = (byte[]) receivedMessage.getObjectProperty("JMS_IBM_MQMD_MsgId");
-            if (messageIdBytes != null) {
-                String messageId = new String(messageIdBytes, StandardCharsets.UTF_8);
+        assertNotNull(receivedMessage, "Received message is null");
 
-                // 验证 MsgId 是否与预期的自定义值匹配
-                assertEquals(customMessageId, messageId);
-            } else {
-                System.out.println("JMS_IBM_MQMD_MsgId property is null");
-            }
-        } else {
-            System.out.println("Message is null");
-        }
+        byte[] messageIdBytes = (byte[]) receivedMessage.getObjectProperty("JMS_IBM_MQMD_MsgId");
+        assertNotNull(messageIdBytes, "JMS_IBM_MQMD_MsgId property is null");
+
+        String messageId = new String(messageIdBytes, StandardCharsets.UTF_8);
+
+        // 驗證 MsgId 是否與預期的自定義值匹配
+        assertEquals(customMessageId, messageId);
+
     }
 
 }
